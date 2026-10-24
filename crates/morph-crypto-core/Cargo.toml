@@ -6,5 +6,9 @@ license.workspace = true
 rust-version.workspace = true
 description = "Standalone cryptographic core for MORPH-Crypt research"
 
+[dependencies]
+chacha20poly1305 = { version = "=0.11.0", features = ["zeroize"] }
+zeroize = "1.8"
+
 [lints]
 workspace = true

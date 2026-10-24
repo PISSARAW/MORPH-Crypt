@@ -4,9 +4,9 @@ MORPH-Crypt is an independent research project for studying morphogenetic
 cryptographic systems. GenOS coordinates research and records evidence; the
 cryptographic runtime is designed to build and operate without GenOS.
 
-> **Research status:** this repository currently contains project scaffolding.
-> It does not yet implement a cryptographic construction and must not be used to
-> protect real data.
+> **Research status:** the core contains an experimental AEAD wrapper. Key
+> generation, persistence, rotation and recovery are not implemented. Do not
+> use it to protect real data.
 
 ## Workspace
 
