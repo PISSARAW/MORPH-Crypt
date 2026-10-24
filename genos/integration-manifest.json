@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "project": "PISSARAW/MORPH-Crypt",
-  "integrationStatus": "contract-only",
+  "integrationStatus": "client-implemented-live-validation-pending",
   "genos": {
     "repository": "https://github.com/PISSARAW/GenOS",
     "branch": "v3",
-    "commit": "3ec15efb9a5e21d2e1f3bc9d939ebc2391f36eb8",
+    "commit": "236d9c404cbfcc4f305b1fb573b66ad9dbce144f",
     "capabilities": [
       {
         "name": "morphogenesis-runtime",
@@ -22,6 +22,10 @@
       {
         "name": "verification-and-evidence",
         "use": "Store independently checked claims with explicit scope and limitations."
+      },
+      {
+        "name": "PROMOTION_GATE@1.0.0",
+        "use": "Test-only Linked approval path for a synthetic strategy run; requires a human-signed receipt and never promotes MORPH-Crypt source automatically."
       }
     ]
   },

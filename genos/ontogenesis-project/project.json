@@ -6,6 +6,10 @@
   "objective": "Research and prototype morphogenetic cryptographic protocols with independently reviewable evidence.",
   "status": "registration-blocked",
   "blocker": "GenOS local instance reports gvx-ledger-chain-invalid:control-plane-mac-mismatch on read-only status.",
+  "gciPilot": {
+    "status": "client-implemented-live-validation-pending",
+    "blocker": "A dedicated GenOS test project, temporary scoped key, synthetic run, and human-signed approval proof are required."
+  },
   "constraints": {
     "securityChangesRequireHumanReview": true,
     "genosOutageMustNotDisableCryptoRuntime": true,
