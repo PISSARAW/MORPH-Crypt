@@ -5,7 +5,7 @@
   "genos": {
     "repository": "https://github.com/PISSARAW/GenOS",
     "branch": "v3",
-    "commit": "236d9c404cbfcc4f305b1fb573b66ad9dbce144f",
+    "commit": "7fb9c8bb4ce995db4243881463d2af6577c52530",
     "capabilities": [
       {
         "name": "morphogenesis-runtime",

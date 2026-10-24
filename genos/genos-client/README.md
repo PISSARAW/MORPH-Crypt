@@ -40,8 +40,16 @@ First verify the pinned export with the read-only service key:
 python genos/genos-client/gci_e2e.py inspect
 ```
 
-Then, after preparing a synthetic run and obtaining its human-signed approval
-payload through the approved review process:
+Prepare a synthetic run and have a distinct authorized human reviewer inspect
+it. Using that reviewer's GenOS interactive session, call
+`POST /api/gci/v1/projects/<project-id>/approval-proofs` with
+`{"runId":"<run-id>","decision":"approve","payloadHash":"<reviewed-hash>"}`.
+This requires a project-scoped `gci:human-approve` policy for the reviewer. The
+server checks the current digest and requester separation, then returns a
+five-minute proof. Save only the returned `proof` object to the approval file;
+the machine service key cannot issue it.
+
+Then run the Linked lifecycle and invocation:
 
 ```sh
 python genos/genos-client/gci_e2e.py e2e --apply \

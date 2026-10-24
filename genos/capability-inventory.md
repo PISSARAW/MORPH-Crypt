@@ -1,6 +1,6 @@
 # Inventaire des capacités GenOS épinglées
 
-Révision examinée : `236d9c404cbfcc4f305b1fb573b66ad9dbce144f` (`v3`).
+Révision examinée : `7fb9c8bb4ce995db4243881463d2af6577c52530` (`v3`).
 
 Cet inventaire décrit les interfaces présentes dans le code source à cette
 révision. Il ne prouve ni que le service est déployé, ni qu'une instance est
@@ -9,9 +9,9 @@ encore connecté.
 
 | Capacité | Source à la révision épinglée | Constat | Statut pour MORPH-Crypt |
 | --- | --- | --- | --- |
-| Topology Runtime Port | [`topologyRuntimePort.js`](https://github.com/PISSARAW/GenOS/blob/236d9c404cbfcc4f305b1fb573b66ad9dbce144f/backend/src/services/morphogenesis/runtime/topologyRuntimePort.js) | Contrat `1.1.0`; cycle de vie `observe`, `adapt`, `quiesce`, `snapshot`, `restore`, `finalize`. États `verified`, `declared`, `unknown`, `unsupported`. L'invocation morphogenétique exige l'état `verified` et une fonction de cycle de vie présente. | Contrat source inspecté; aucune topologie testée ni aucun adaptateur intégré. |
-| Ontogenesis Project CLI | [`genos-ontogenesis.cjs`](https://github.com/PISSARAW/GenOS/blob/236d9c404cbfcc4f305b1fb573b66ad9dbce144f/backend/bin/genos-ontogenesis.cjs) | La commande `init` accepte un workspace `--root`, une branche, un objectif et un identifiant de projet; le CLI expose aussi tâches, état et budgets. | Interface inspectée; MORPH-Crypt n'est pas encore enregistré dans l'instance cible. |
-| GCI PROMOTION_GATE Linked | [`promotion-gate-v1.json`](https://github.com/PISSARAW/GenOS/blob/236d9c404cbfcc4f305b1fb573b66ad9dbce144f/spec/gci/exports/promotion-gate-v1.json) | Export `PROMOTION_GATE@1.0.0`, digest `sha256:d4bd558694492718c7a18bcbb0ead36afbde5c09f08006a63b4ce5736c1b94c9`; invoqué par l'API GCI Linked, il exige `workspace:write`, signature récente et reçu humain valide. | Client opérateur isolé ajouté; validation externe de bout en bout en attente. |
+| Topology Runtime Port | [`topologyRuntimePort.js`](https://github.com/PISSARAW/GenOS/blob/7fb9c8bb4ce995db4243881463d2af6577c52530/backend/src/services/morphogenesis/runtime/topologyRuntimePort.js) | Contrat `1.1.0`; cycle de vie `observe`, `adapt`, `quiesce`, `snapshot`, `restore`, `finalize`. États `verified`, `declared`, `unknown`, `unsupported`. L'invocation morphogenétique exige l'état `verified` et une fonction de cycle de vie présente. | Contrat source inspecté; aucune topologie testée ni aucun adaptateur intégré. |
+| Ontogenesis Project CLI | [`genos-ontogenesis.cjs`](https://github.com/PISSARAW/GenOS/blob/7fb9c8bb4ce995db4243881463d2af6577c52530/backend/bin/genos-ontogenesis.cjs) | La commande `init` accepte un workspace `--root`, une branche, un objectif et un identifiant de projet; le CLI expose aussi tâches, état et budgets. | Interface inspectée; MORPH-Crypt n'est pas encore enregistré dans l'instance cible. |
+| GCI PROMOTION_GATE Linked | [`promotion-gate-v1.json`](https://github.com/PISSARAW/GenOS/blob/7fb9c8bb4ce995db4243881463d2af6577c52530/spec/gci/exports/promotion-gate-v1.json) | Export `PROMOTION_GATE@1.0.0`, digest `sha256:d4bd558694492718c7a18bcbb0ead36afbde5c09f08006a63b4ce5736c1b94c9`; invoqué par l'API GCI Linked, il exige `workspace:write`, signature récente et reçu humain valide. | Client opérateur isolé ajouté; validation externe de bout en bout en attente. |
 | GVX, AEIS et moteurs formels | Aucun contrat client stable qualifié pour ce dépôt n'a été établi dans cette étape. | Une présence dans le dépôt GenOS ne suffit pas à déterminer le protocole d'appel, les prérequis ou les garanties. | Non intégré; à inventorier avant de dépendre de ces capacités. |
 
 ## Conditions d'intégration
