@@ -27,9 +27,12 @@ through GenOS's Linked invocation API. GenOS returns a GCI invocation receipt.
 
 Set `GENOS_GCI_API_URL`, `GENOS_GCI_API_TOKEN`,
 `GENOS_GCI_ORGANIZATION_ID`, and `GENOS_GCI_PROJECT_ID` in the operator's
-approved secret manager. The API URL must be an HTTPS origin, except loopback
-HTTP for a same-host deployment. Set `GENOS_GCI_ENVIRONMENT` to a disposable
-environment name, for example `morph-crypt-e2e`.
+approved secret manager. On systemd, the client can read the token from the
+`GENOS_GCI_API_TOKEN` credential file in `CREDENTIALS_DIRECTORY`, so a
+transient unit can use `LoadCredentialEncrypted` without placing the token in
+its environment. The API URL must be an HTTPS origin, except loopback HTTP for
+a same-host deployment. Set `GENOS_GCI_ENVIRONMENT` to a disposable environment
+name, for example `morph-crypt-e2e`.
 
 First verify the pinned export with the read-only service key:
 

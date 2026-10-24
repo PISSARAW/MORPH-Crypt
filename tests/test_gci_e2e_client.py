@@ -14,6 +14,7 @@ from gci_e2e import (
     GciError,
     Settings,
     read_approval,
+    read_settings,
     run_e2e,
     safe_origin,
     SOURCE_COMMIT,
@@ -178,6 +179,14 @@ class GciClientTests(unittest.TestCase):
             safe_origin("http://api.example.test")
         with self.assertRaises(GciError):
             safe_origin("https://api.example.test/private")
+
+    def test_systemd_credential_file_supplies_token_without_environment_value(self):
+        with tempfile.TemporaryDirectory() as directory:
+            Path(directory, "GENOS_GCI_API_TOKEN").write_text("short-lived-token", encoding="utf-8")
+            settings = read_settings({"GENOS_GCI_API_URL": "http://127.0.0.1:4000",
+                "GENOS_GCI_ORGANIZATION_ID": "org-test", "GENOS_GCI_PROJECT_ID": "project-test",
+                "CREDENTIALS_DIRECTORY": directory})
+        self.assertEqual(settings.token, "short-lived-token")
 
     def test_authorization_is_not_forwarded_through_redirects(self):
         with self.assertRaises(GciError):

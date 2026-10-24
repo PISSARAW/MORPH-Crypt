@@ -133,15 +133,26 @@ def is_pinned_export(item: object) -> bool:
 
 def read_settings(env: dict[str, str] | None = None) -> Settings:
     values = os.environ if env is None else env
+    token = values.get("GENOS_GCI_API_TOKEN") or read_token_credential(values)
     required = ["GENOS_GCI_API_URL", "GENOS_GCI_API_TOKEN",
                 "GENOS_GCI_ORGANIZATION_ID", "GENOS_GCI_PROJECT_ID"]
-    missing = [name for name in required if not values.get(name)]
+    missing = [name for name in required if not (token if name == "GENOS_GCI_API_TOKEN" else values.get(name))]
     if missing:
         raise GciError("Missing required GCI settings: " + ", ".join(missing))
     origin = safe_origin(values["GENOS_GCI_API_URL"])
-    return Settings(origin, values["GENOS_GCI_API_TOKEN"],
+    return Settings(origin, token,
         values["GENOS_GCI_ORGANIZATION_ID"], values["GENOS_GCI_PROJECT_ID"],
         values.get("GENOS_GCI_ENVIRONMENT", "morph-crypt-e2e"))
+
+
+def read_token_credential(values: dict[str, str]) -> str:
+    directory = values.get("CREDENTIALS_DIRECTORY")
+    if not directory:
+        return ""
+    try:
+        return (Path(directory) / "GENOS_GCI_API_TOKEN").read_text(encoding="utf-8").strip()
+    except OSError:
+        return ""
 
 
 def safe_origin(value: str) -> str:
