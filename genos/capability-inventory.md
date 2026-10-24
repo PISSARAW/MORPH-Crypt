@@ -29,6 +29,7 @@ encore connecté.
 ## Étape restante
 
 L'enregistrement du projet via `genos-ontogenesis.cjs init` n'a pas été
-exécuté. Il écrit dans l'état de l'instance GenOS locale; il faut le lancer
-depuis une installation GenOS correspondant à la révision épinglée, avec le
-workspace MORPH-Crypt et la branche souhaitée.
+exécuté. La lecture seule `status --project morph-crypt --json` a échoué avec
+`gvx-ledger-chain-invalid:control-plane-mac-mismatch`. L'instance locale doit
+être réparée et sa lecture d'état rétablie avant de modifier son registre. Le
+manifeste MORPH-Crypt reste épinglé à la révision GenOS indiquée plus haut.
