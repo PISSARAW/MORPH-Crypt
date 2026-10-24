@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "project": "PISSARAW/MORPH-Crypt",
+  "integrationStatus": "contract-only",
+  "genos": {
+    "repository": "https://github.com/PISSARAW/GenOS",
+    "branch": "v3",
+    "commit": "3ec15efb9a5e21d2e1f3bc9d939ebc2391f36eb8",
+    "capabilities": [
+      {
+        "name": "morphogenesis-runtime",
+        "use": "Propose and compare research configurations; never apply crypto changes directly."
+      },
+      {
+        "name": "topology-runtime-port",
+        "use": "Use observe/adapt/quiesce/snapshot/restore/finalize as a lifecycle contract when an adapter exists."
+      },
+      {
+        "name": "ontogenesis-project",
+        "use": "Coordinate project tasks and reproducible research runs."
+      },
+      {
+        "name": "verification-and-evidence",
+        "use": "Store independently checked claims with explicit scope and limitations."
+      }
+    ]
+  },
+  "safetyBoundaries": {
+    "runtimeRequiresGenos": false,
+    "automaticSecurityChanges": false,
+    "automaticMerge": false,
+    "secretMaterialMayLeaveProject": false
+  },
+  "compatibility": {
+    "mechanism": "versioned-adapter-contract",
+    "revalidationRequiredOnGenosRevisionChange": true
+  }
+}

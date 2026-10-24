@@ -1,0 +1,30 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+secrets/
+.secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+*-credentials.json
+
+# Rust and other generated outputs
+/target/
+**/target/
+build/
+dist/
+coverage/
+*.profraw
+*.gcda
+*.gcno
+
+# Local databases and editor state
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+.DS_Store
+Thumbs.db

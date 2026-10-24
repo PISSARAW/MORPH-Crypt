@@ -1,0 +1,10 @@
+[package]
+name = "morph-crypto-lineage"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Key lineage and lifecycle metadata for MORPH-Crypt"
+
+[lints]
+workspace = true

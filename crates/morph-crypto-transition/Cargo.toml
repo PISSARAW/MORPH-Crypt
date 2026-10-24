@@ -1,0 +1,10 @@
+[package]
+name = "morph-crypto-transition"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Explicit cryptographic state transitions for MORPH-Crypt"
+
+[lints]
+workspace = true

@@ -1,0 +1,10 @@
+[package]
+name = "morph-crypto-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Standalone cryptographic core for MORPH-Crypt research"
+
+[lints]
+workspace = true
